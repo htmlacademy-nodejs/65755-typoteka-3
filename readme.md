@@ -1,7 +1,7 @@
 # Личный проект «Типотека» [![Build status][travis-image]][travis-url]
 
-* Студент: [Александр Батолло](https://up.htmlacademy.ru/nodejs/3/user/65755).
-* Наставник: `Неизвестно`.
+* Студент: [Александр Батолло](https://htmlacademy.ru/profile/batollo).
+* Наставник: [Алексей Пан](https://htmlacademy.ru/profile/id1437965).
 
 ---
 
