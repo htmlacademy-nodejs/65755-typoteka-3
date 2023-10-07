@@ -15,7 +15,7 @@ const DEFAULT_PORT = 8080;
 const app = express();
 
 // Подключим созданные маршруты
-app.use(`/offers`, articlesRoutes);
+app.use(`/articles`, articlesRoutes);
 app.use(`/my`, myRoutes);
 app.use(`/`, mainRoutes);
 
