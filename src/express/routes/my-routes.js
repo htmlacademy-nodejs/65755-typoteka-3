@@ -10,7 +10,7 @@ const myRouter = new Router();
 // без `my`, т.к. уже указали этот префикс при подключении
 // модуля маршрута в `express.js`
 
-myRouter.get(`/`, (req, res) => res.send(`/my`));
-myRouter.get(`/comments`, (req, res) => res.send(`/my/comments`));
+myRouter.get(`/`, (req, res) => res.render(`my`));
+myRouter.get(`/comments`, (req, res) => res.render(`comments`));
 
 module.exports = myRouter;

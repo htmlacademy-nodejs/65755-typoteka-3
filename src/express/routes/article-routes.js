@@ -10,9 +10,10 @@ const articlesRoutes = new Router();
 // без `offers`, т.к. уже указали этот префикс при подключении
 // модуля маршрута в `express.js`
 
-articlesRoutes.get(`/category/:id`, (req, res) => res.send(`/articles/category/:id`));
-articlesRoutes.get(`/add`, (req, res) => res.send(`/articles/add`));
-articlesRoutes.get(`/edit/:id`, (req, res) => res.send(`/articles/edit/:id`));
-articlesRoutes.get(`/:id`, (req, res) => res.send(`/articles/:id`));
+articlesRoutes.get(`/category/:id`, (req, res) => res.render(`categori`));
+articlesRoutes.get(`/add`, (req, res) => res.render(`posts/post`));
+articlesRoutes.get(`/edit/:id`, (req, res) => res.render(`posts/post`));
+articlesRoutes.get(`/all-categories`, (req, res) => res.render(`posts/all-categories`));
+articlesRoutes.get(`/:id`, (req, res) => res.render(`posts/post-detail`));
 
 module.exports = articlesRoutes;
