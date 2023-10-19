@@ -36,7 +36,7 @@ module.exports = (app, articleService, commentService) => {
       .json(article);
   });
 
-  route.put(`/:articleId`, (req, res) => {
+  route.put(`/:articleId`, articleValidator, (req, res) => {
     const {articleId} = req.params;
     const existArticle = articleService.findOne(articleId);
 
