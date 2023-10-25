@@ -10,6 +10,18 @@ head
   link(rel='preload' href='./fonts/SFProDisplay-Regular.woff2' as='font' crossorigin='anonymous')
   link(rel='stylesheet' href='/css/style.min.css')
 body.wrapper
+  mixin insertArticleImage(article)
+    img.preview__background-image(src=`img/${article.picture}@1x.jpg` width='460' height='240' srcset=`img/${article.picture}@1x.jpg, img/${article.picture}@2x.jpg 2x` alt=article.title)
+
+  mixin insertDateTime(article)
+    time(class!=attributes.class || `preview__time` datetime=article.createdDate) #{new Date(article.createdDate).toLocaleString([], { year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: '2-digit' })}
+
+  mixin insertResult(search, result)
+    - const substrings = result.title.split(search);
+    a.search__link(href=`/articles/${result.id}`) #{substrings[0]}
+      b #{search}
+      | #{substrings[1]}
+
   include partials/header.pug
   block content
   include partials/footer.pug

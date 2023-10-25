@@ -13,7 +13,7 @@ class ArticleService {
       .assign({
         id: nanoid(MAX_ID_LENGTH),
         comments: [],
-        currentDate: new Date()
+        // currentDate: new Date()
       }, article);
 
     this._articles.push(newArticle);
