@@ -24,9 +24,12 @@ const getRandomDate = () => {
 
 const getRandomArray = (arr) => shuffle(arr).slice(1, getRandomInt(0, arr.length - 1));
 
+const ensureArray = (value) => Array.isArray(value) ? value : [value];
+
 module.exports = {
   getRandomInt,
   getRandomDate,
   getRandomArray,
+  ensureArray,
   shuffle
 };
