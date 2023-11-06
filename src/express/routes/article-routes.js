@@ -36,14 +36,8 @@ articlesRoutes.get(`/category/:id`, (req, res) => res.render(`category`));
 articlesRoutes.get(`/add`, async (req, res) => {
   const categories = await api.getCategories();
   const article = {
-    // id: ``,
-    // title: ``,
-    // announce: ``,
-    // fullText: ``,
     createdDate: ``,
-    // picture: ``,
-    category: [],
-    // comments: []
+    category: []
   };
   res.render(`posts/post`, {article, categories});
 });
@@ -64,12 +58,7 @@ articlesRoutes.post(`/add`,
       // в `body` содержатся текстовые данные формы
       // в `file` — данные о сохранённом файле
 
-      // console.log(`req`, req);
-
       const {body, file} = req;
-
-      console.log(`body`, body);
-      console.log(`file`, file);
 
       const getBodyCategories = (requestBody, categories) => {
         const bodyCategories = [];
