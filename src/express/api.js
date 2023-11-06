@@ -10,8 +10,6 @@ const defaultUrl = `http://localhost:${port}/api/`;
 class API {
 
   constructor(baseURL, timeout) {
-    console.log(`baseURL`, baseURL);
-    console.log(`timeout`, timeout);
     this._http = axios.create({
       baseURL,
       timeout
@@ -19,10 +17,7 @@ class API {
   }
 
   async _load(url, options) {
-    console.log(`url`, url);
-    console.log(`options`, options);
     const response = await this._http.request({url, ...options});
-    console.log(`response.data`, response.data);
     return response.data;
   }
 
@@ -43,7 +38,6 @@ class API {
   }
 
   async createArticle(data) {
-    console.log(`data`, data);
     return await this._load(`/articles`, {
       method: `POST`,
       data
